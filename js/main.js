@@ -40,6 +40,7 @@ $(function(){
       slidesToScroll:1,
       speed: 500,
       pauseOnHover:false,
+      pauseOnFocus:false,
       fade: true,
       nextArrow: $('.slider-next-btn'),
       prevArrow: $('.slider-prev-btn')
