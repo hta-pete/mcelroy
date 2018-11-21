@@ -1,0 +1,337 @@
+/* –––––––––––––––––––––––––––––––––––––––
+
+Reset
+
+––––––––––––––––––––––––––––––––––––––––*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* –––––––––––––––––––––––––––––––––––––––
+
+Helpers
+
+––––––––––––––––––––––––––––––––––––––––*/
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+.clear{
+	clear:both;
+}
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.flex-right{
+    display:flex;
+    justify-content: flex-end;
+}
+.flex-center-v{
+    display:flex;
+    align-items:center;
+}
+.flex-center-h{
+    display:flex;
+    justify-content:center;
+}
+.flex-all{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.center-all{
+    position:absolute;
+    top:50%;
+    left:50%;
+    @include transform(translateY(-50%) translateX(-50%));
+}
+
+/* –––––––––––––––––––––––––––––––––––––––
+
+Type / Buttons
+
+––––––––––––––––––––––––––––––––––––––––*/
+h1,h2, h3{
+    font-family:"Lato";
+    font-weight:900;
+    text-transform:uppercase;
+    font-style:italic;
+}
+h1{
+    letter-spacing:-3px;
+}
+h2{
+    letter-spacing:-2px;
+}
+h3{
+    font-size:30px;
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:20px;
+}
+a{
+    text-decoration:none;
+}
+p{
+    font-size:15px;
+    line-height:1.7;
+    font-weight:400;
+    margin-bottom:20px;
+    &:last-of-type{
+        margin-bottom:0;
+    }
+}
+.btn-primary{
+    display:inline-block;
+    height:45px;
+    padding:0 30px;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:14px;
+    line-height:45px;
+    text-align:center;
+    background:white;
+    color:$red;
+    border-radius:6px;
+    margin-top:30px;
+    &.btn-apply{
+        background:$red;
+        color:white;
+        font-size:17px;
+    }
+}
+
+/* –––––––––––––––––––––––––––––––––––––––
+
+Globals
+
+––––––––––––––––––––––––––––––––––––––––*/
+html,body{
+	height:100%;
+	-webkit-font-smoothing:antialiased;
+    font-family:"Lato", sans-serif;
+    background:$background;
+    color:$primary;
+    min-width:1068px;
+}
+
+#main{
+    position:relative;
+	width:100%;
+    height:100%;
+    max-width:1200px;
+    margin:0 auto;
+}
+.container{
+	position:relative;
+	width:100%;
+	max-width:1200px;
+	margin:0 auto;
+}
+.container-small{
+    position:relative;
+    width:100%;
+    max-width:960px;
+    margin:0 auto;
+    padding:0 30px;
+}
+
+.col-1-2{
+	width:50%;
+	float:left;
+}
+.col-1-3{
+	width:30.666666%;
+	float:left;
+    margin-right:4%;
+    &:last-child{
+        margin-right:0;
+    }
+}
+.col-1-4{
+    width:22%;
+    float:left;
+    margin-right:4%;
+    &:last-child{
+        margin-right:0;
+    }
+}
+
+/* –––––––––––––––––––––––––––––––––––––––
+
+Homepage
+
+––––––––––––––––––––––––––––––––––––––––*/
+.hero-slider{
+    position:relative;
+    width:100%;
+    height:650px;
+    background:$primary;
+    .hero-slides{
+        position:relative;
+        width:100%;
+    }
+    .slick-list, .slick-track{
+        height:650px;
+    }
+    .slider-next-btn, .slider-prev-btn{
+        position:absolute;
+        top:50%;
+        margin-top:-25px;
+        width:50px;
+        height:50px;
+        background:rgba(0,0,0,0.7);
+        text-align:center;
+        cursor:pointer;
+        i{
+            font-size:14px;
+            line-height:50px;
+            color:white;
+        }
+    }
+    .slider-next-btn{
+        right:0;
+    }
+    .slider-prev-btn{
+        left:0;
+    }
+    .slick-dots{
+        position:absolute;
+        bottom:20px;
+        width:100%;
+        text-align:center;
+        li{
+            display:inline-block;
+            margin:0 5px;
+            button{
+                display:block;
+                width:10px;
+                height:10px;
+                padding:0;
+                text-indent:-99px;
+                overflow:hidden;
+                border-radius:10px;
+                border:1px solid white;
+                background:transparent;
+                -webkit-appearance:none;
+                cursor:pointer;
+                &:focus{
+                    outline:none;
+                }
+            }
+            &.slick-active{
+                button{
+                    background:white;
+                }
+            }
+        }
+    }
+}
+.hero-slide{
+    position:relative;
+    width:100%;
+    background-position:center;
+    background-repeat:none;
+    background-size:cover;
+    .hero-copy{
+        position:absolute;
+        bottom:110px;
+        width:100%;
+        text-align:center;
+        .hero-sub-heading{
+            font-size:25px;
+            line-height:1;
+            text-transform:uppercase;
+            font-style:italic;
+            color:white;
+            font-weight:400;
+        }
+        h1{
+            font-size:90px;
+            line-height:90px;
+            color:white;
+        }
+    }
+}
+.advantages-home{
+    padding:60px 0 65px 0;
+    background:$red url(../img/advantages-preview-bg.jpg) no-repeat right center;
+    background-size:cover;
+    text-align:center;
+    li{
+        display:inline-block;
+        padding:0 30px;
+        font-size:17px;
+        font-weight:700;
+        color:white;
+        text-transform:uppercase;
+        font-style:italic;
+        border-right:1px solid rgba(255,255,255,0.4);
+        &:last-child{
+            border-right:none;
+        }
+        strong{
+            font-size:35px;
+            font-weight:900;
+        }
+    }
+}
+.about-home{
+    position:relative;
+    padding:120px 0;
+    .col-1-2:first-child{
+        padding-right:60px;
+    }
+    img{
+        display:block;
+        width:100%;
+        height:auto;
+    }
+}
+.training-home{
+    padding:0 0 120px 0;
+    .col-1-2:first-child{
+        padding-right:60px;
+    }
+    img{
+        display:block;
+        width:100%;
+        height:auto;
+    }
+}
+
+
